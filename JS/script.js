@@ -1,22 +1,67 @@
-//Exemplos de funções
+// //Exemplo de Funções
+// const divElement = document.getElementById("div-box")
 
-//Recupera apenas um elemento
-//const liElements = document.querySelector("li");
-//console.log(liElements);
+// // divElement.addEventListener("click", ()=>{
+// //     console.log(divElement);
+// // });
 
-//Recupera todos os elementos
-//const liElements = document.querySelectorAll("li")
+// divElement.addEventListener("click", mostraElemento);
 
-//Convertendo node list em array com spread
-//const arrayElements = [...liElements]
 
-//console.log(arrayElements);
+// function mostraElemento() {
+//     console.log(divElement)
+// }
 
-//Simplificando o codigo acima poderiamos arruma-lo assim
-const arrayElements = [...document.querySelectorAll("li")];
+// function soma() {
+//     let n1 = 10
+//     let n2 = 5
+//     console.log(n1 + n2)
+// }
+ 
 
-arrayElements.map((el,key)=>{
-    if (el.textContent == "item-24") {
-        el.textContent = `${key+1}[ item-24 ]`;
-    }
-});
+// //Recuperando elementos do HTML com querySelector
+// const liElements = document.querySelector("#item");
+// console.log(liElements);
+
+
+// //Recuperando elementos do HTML com querySelectorAll
+// const liElements = document.querySelectorAll("li");
+// //CONVERTENDO NODE LIST EM ARRAY COM SPREAD
+// const arrayElements = [...liElements];
+// console.log(arrayElements);
+
+//CONVERTENDO NODE LIST EM ARRAY COM SPREAD
+// const arrayElements = [...document.querySelectorAll("li")];
+
+// arrayElements.map((el,key)=>{
+
+//     if (el.textContent.indexOf("1") != (-1)) {
+//         el.textContent = `[ ${el.textContent} ]`;
+//     }
+// });
+let tmp = 0;
+
+
+function mudaCor() {
+    let r = Math.ceil(Math.random()*255);
+    let g = Math.ceil(Math.random()*255);
+    let b = Math.ceil(Math.random()*255);
+    
+    const elemento = [...document.getElementsByClassName("conteudo")];
+    elemento.forEach( (el)=>{
+        el.style.backgroundColor = `rgb(${r},${g},${b})`;
+    } )
+
+   tmp = setTimeout(mudaCor, 5000);
+
+}
+
+function pararTimeOut() {
+    clearTimeout(tmp);
+}
+
+function trocabanner() {
+    
+}
+
+mudaCor()
